@@ -8,24 +8,38 @@ package com.example.AULA1.entity;
 import javax.persistence.*;
 import java.util.*;
 import org.hibernate.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document
 
 public class User {
+    /*
+    CONEXÃO MySQL
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)*/
+    @Id
+    
  
-    private long id;
+    private String id;
+    private String age;
     private String name;
     private String email;
-    @ManyToMany
+    // MySQL @ManyToMany
     private Set <Role> roles;
+    
+     public String getAge() {
+        return age;
+    }
 
-    public long getId() {
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
