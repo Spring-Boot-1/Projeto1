@@ -25,9 +25,9 @@ public class DataInitializr implements ApplicationListener<ContextRefreshedEvent
         
         
         if(users.isEmpty()){
-            createUser("Enzo","20","qualquer1@gmail.com");
-            createUser("Igor","23","qualquer2@gmail.com");
-            createUser("Matheus","23","qualquer3@gmail.com");
+            createUser("Enzo","qualquer1@gmail.com");
+            createUser("Igor","qualquer2@gmail.com");
+            createUser("Matheus","qualquer3@gmail.com");
             
        
         }
@@ -48,11 +48,10 @@ public class DataInitializr implements ApplicationListener<ContextRefreshedEvent
     
     }
     
-    public void createUser(String name,String Age,String email){
+    public void createUser(String name,String email){
         
         User user = new User ();
         user.setEmail(email);
-        user.setAge(Age);
         user.setName(name);
         
         userrepository.save(user);
